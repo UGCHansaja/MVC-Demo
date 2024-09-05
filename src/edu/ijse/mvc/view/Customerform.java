@@ -380,19 +380,7 @@ public class Customerform extends javax.swing.JFrame {
         );
         
         try {
-            String resp = CUSTOMER_CONTROLLER.updateCustomer(
-                
-                    customerDto.getCustID(),
-                    customerDto.getCustTitle(),
-                    customerDto.getCustName(),
-                    customerDto.getDOB(),
-                    customerDto.getSalary(),
-                    customerDto.getCustAddress(),
-                    customerDto.getCity(),
-                    customerDto.getProvince(),
-                    customerDto.getPostalCode()
-                
-            );
+            String resp = CUSTOMER_CONTROLLER.updateCustomer(customerDto);
             JOptionPane.showMessageDialog(this, resp);
             loadTable();
             clearForm();

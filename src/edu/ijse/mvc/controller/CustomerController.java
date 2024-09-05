@@ -35,8 +35,8 @@ public class CustomerController {
         return resp;
     }
     
-    public String updateCustomer(String id , String title , String name , java.sql.Date dob , Double salary , String address , String city , String province , String postalCode) throws ClassNotFoundException, SQLException {
-        String resp = CUSTOMER_MODEL.updateCustomer(id,title,name,dob,salary,address,city,province,postalCode);
+    public String updateCustomer(CustomerDto customerDto) throws ClassNotFoundException, SQLException {
+        String resp = CUSTOMER_MODEL.updateCustomer(customerDto);
         return resp;
     } 
 }

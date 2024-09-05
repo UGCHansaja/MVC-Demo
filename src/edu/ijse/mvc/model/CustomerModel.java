@@ -72,13 +72,13 @@ public class CustomerModel {
         return result > 0 ? "Successfully Deleted" : "Delete Failed";
     }
     
-    public String updateCustomer(String custID , String custTitle , String custName , java.sql.Date DOB , Double salary , String custAddress , String city , String province , String postalCode) throws ClassNotFoundException, SQLException {
+    public String updateCustomer(CustomerDto Dto) throws ClassNotFoundException, SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
         String sql = "UPDATE customer SET CustTitle = ?, CustName = ?, DOB = ?, salary = ?, CustAddress = ?, City = ?, Province = ?, PostalCode = ? WHERE CustID = ?";
         PreparedStatement statement = connection.prepareStatement(sql);
         
-        statement.setString(1, custID);
-        statement.setString(2, custTitle);
+        statement.setString(1, Dto.getCustID());
+        statement.setString(2, Dto.custTitle);
         statement.setString(3, custName);
         statement.setDate(4, DOB);
         statement.setDouble(5, salary);
